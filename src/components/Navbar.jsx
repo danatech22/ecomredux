@@ -49,6 +49,9 @@ const SearchContainer = styled.div`
 
 const Input = styled.input`
     border: none;
+    &:focus {
+        outline: none;
+    }
 `;
 
 const Center = styled.div`
@@ -103,7 +106,7 @@ const Navbar = () => {
            <Left>
             <Language>EN</Language>
             <SearchContainer>
-                <Input />
+                <Input type='text'/>
                 <SearchIcon style={{ color: "gray", fontSize: "16px" }}/>
             </SearchContainer>
            </Left>

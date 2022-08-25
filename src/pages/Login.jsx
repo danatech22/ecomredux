@@ -4,6 +4,7 @@ import { auth } from "../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth"
 import { authFailure, authSuccess, authStart  } from "../redux/userRedux";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
     width: 100vw;
@@ -53,12 +54,7 @@ const Button = styled.button`
     margin-bottom: 10px;
 `;
 
-const Link = styled.a`
-    margin: 5px 0;
-    font-size: 12px;
-    text-decoration: underline;
-    cursor: pointer;
-`;
+const Linka = styled.span``;
 
 const Login = () => {
     const dispatch = useDispatch();
@@ -99,8 +95,9 @@ const Login = () => {
             <Input name="email" onChange={handleChange} placeholder="email"/>
             <Input name="password" onChange={handleChange} placeholder="password"/>
             <Button onClick={handleLogin}>LOG IN</Button>
-            <Link>FORGET PASSWORD?</Link>
-            <Link>CREATE A NEW ACCOUNT</Link>
+            <Link to="/register" style={{ textDecoration: 'none' }}>
+            <Linka>CREATE A NEW ACCOUNT</Linka>
+            </Link>
         </Form>
     </Wrapper>
 </Container>
